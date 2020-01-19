@@ -50,6 +50,11 @@ class MainActivity : AppCompatActivity() {
         questionBank[questionToDisplay]
     }
 
+    private fun back() {
+        questionToDisplay--
+        questionBank[questionToDisplay]
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -59,8 +64,14 @@ class MainActivity : AppCompatActivity() {
         val trueButton: Button = findViewById(R.id.true_button)
         trueButton.setOnClickListener {}
 
+        val falseButton: Button = findViewById(R.id.false_button)
+        falseButton.setOnClickListener {}
+
 
         val forwardButton: Button = findViewById(R.id.forward_button)
         forwardButton.setOnClickListener { forward() }
+
+        val backButton: Button = findViewById(R.id.back_button)
+        backButton.setOnClickListener { back() }
     }
 }
